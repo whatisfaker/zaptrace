@@ -20,7 +20,7 @@ type spanLogger struct {
 
 func (sl spanLogger) Debug(msg string, fields ...zapcore.Field) {
 	if r := sl.logger.Check(zapcore.DebugLevel, msg); r != nil {
-		//sl.logToSpan("debug", msg, fields...)
+		sl.logToSpan("debug", msg, fields...)
 		r.Write(fields...)
 		//sl.logger.Debug(msg, fields...)
 	}

@@ -17,3 +17,7 @@ func (c jaegerLoggerImp) Error(msg string) {
 func (c jaegerLoggerImp) Infof(msg string, args ...interface{}) {
 	c.logger.Info(fmt.Sprintf(msg, args...))
 }
+
+func (c jaegerLoggerImp) Debugf(msg string, args ...interface{}) {
+	c.logger.Debug(fmt.Sprintf(msg, args...))
+}
